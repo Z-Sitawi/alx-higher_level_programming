@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     ac = ord(c)  # to find ASCII code.
     if 97 <= ac <= 122:
