@@ -1,14 +1,7 @@
 #!/usr/bin/python3
 def remove_char_at(str, n):
-    # Check if the index is valid
-    len_str = len(str)
-    if n < 0 or n >= len_str:
+    """Create a copy of the string without the character at position n."""
+
+    if not (0 < n >= len(str)):  # Check if the index is valid
         return str
-
-    str_copy = ""
-
-    for i in range(len_str):
-        if i != n:
-            str_copy += str[i]
-
-        return str_copy
+    return str[:n] + str[n+1:]
