@@ -5,6 +5,7 @@ if number > 0:
     ld = number % 10
 elif number < 0:
     ld = -number % 10
+    ld = -ld
 else:
     ld = 0
 
