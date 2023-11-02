@@ -1,4 +1,5 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """Print the number of and list of arguments."""
+    """ prints all the names defined by the compiled module hidden_4.pyc"""
+    import

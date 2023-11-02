@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """Print the number of and list of arguments."""
+    """Print the sum of and list of int arguments."""
     import sys
 
     argv = sys.argv
