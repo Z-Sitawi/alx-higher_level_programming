@@ -9,7 +9,9 @@ if __name__ == '__main__':
 
     if argc == 0:
         print("{:d} arguments.".format(argc))
-    elif argc >= 1:
+    elif argc == 1:
+        print("1 arguments:\n1: {}".format(argv[1]))
+    else:
         print("{:d} arguments:".format(argc))
         for x in argv:
             if x not in argv[0]:
