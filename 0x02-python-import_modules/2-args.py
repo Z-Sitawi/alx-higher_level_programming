@@ -9,7 +9,7 @@ if __name__ == '__main__':
     if argc == 0:
         print("{:d} arguments.".format(argc))
     elif argc == 1:
-        print("1 arguments:")
+        print("{:d} arguments:".format(argc))
     else:
         print("{:d} arguments:".format(argc))
     for x in range(argc):
