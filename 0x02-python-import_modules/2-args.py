@@ -7,9 +7,9 @@ if __name__ == '__main__':
     argv = sys.argv
     count = 0
 
-    if not (argc > 0):
+    if argc == 0:
         print("{:d} arguments.".format(argc))
-    else:
+    elif argc >= 1:
         print("{:d} arguments:".format(argc))
         for x in argv:
             if x not in argv[0]:
