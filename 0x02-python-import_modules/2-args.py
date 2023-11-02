@@ -7,9 +7,9 @@ if __name__ == '__main__':
     argv = sys.argv
 
     if argc == 0:
-        print("{:d} arguments.".format(argc))
+        print("0 arguments.")
     elif argc == 1:
-        print("{:d} arguments:".format(argc))
+        print("1 arguments:".format(argc))
     else:
         print("{:d} arguments:".format(argc))
     for x in range(argc):
