@@ -1,10 +1,18 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+/*
+ * File: lists.h
+ * Auth: Zakaria Aaichaou
+ */
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+
+size_t dlistint_len(const dlistint_t *h);
 
 /**
  * struct dlistint_s - doubly linked list
@@ -22,4 +30,4 @@ typedef struct dlistint_s
     struct dlistint_s *next;
 } dlistint_t;
 
-#endif
+#endif /* LISTS_H */
