@@ -2,13 +2,14 @@
 def best_score(a_dictionary):
     """ returns a key with the biggest integer value """
     if isinstance(a_dictionary, dict):
-        # find the biggest value.
-        val = []
-        for x in a_dictionary.values():
-            val.append(x)
-        val = sorted(val)
-        biggest = val[len(val) - 1]
-        # find the key of biggest value.
-        for key in a_dictionary:
-            if a_dictionary.get(key) == biggest:
-                return key
+        # get value of the first key.
+        key = list(a_dictionary.keys())[0]
+        big = a_dictionary[key]
+        # compare it with the rest values.
+        for k, v in a_dictionary.items():
+            if v > big:
+                big = v
+                key = k
+        return key
+    else:
+        return None
