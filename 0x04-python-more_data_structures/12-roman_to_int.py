@@ -13,7 +13,9 @@ def roman_to_int(roman_string):
         if romannum.get(roman_string[i], 0) == 0:
             return 0
 
-    for x in roman_string:
-        if x in romannum:
-            dec = dec + romannum[x]
-    return dec
+    # Check if the current numeral is smaller than the next one
+    if (i != (len(roman_string) - 1) and
+            romannum[roman_string[i]] < romannum[roman_string[i + 1]]):
+        dec += romannum[roman_string[i]] * -1
+    else:
+        dec += romannum[roman_string[i]]
