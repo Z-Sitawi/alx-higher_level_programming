@@ -43,7 +43,7 @@ class Square:
 
     def my_print(self):
         """ prints in stdout the square with the character # """
-        if self.size == 0 and not (self.position[1] > 0):
+        if self.size == 0 or (self.position[1] > 0):
             print("")
         elif self.size > 0:
             for x in range(self.size):
