@@ -33,23 +33,8 @@ class Square:
         """ prints in stdout the square with the character # """
         if self.size == 0:
             print("")
-        for x in range(self.size):
-            for y in range(self.size):
-                print("#", end="")
-            print('')
-
-
-my_square = Square(3)
-my_square.my_print()
-
-print("--")
-
-my_square.size = 10
-my_square.my_print()
-
-print("--")
-
-my_square.size = 0
-my_square.my_print()
-
-print("--")
+        elif self.size > 0:
+            for x in range(self.size):
+                for y in range(self.size):
+                    print("#", end="")
+                print('')
