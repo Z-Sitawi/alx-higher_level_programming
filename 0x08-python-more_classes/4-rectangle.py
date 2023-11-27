@@ -34,5 +34,5 @@ class Rectangle:
 
     def __repr__(self):
         """ Return the string representation of the Rectangle """
-        rect = f"Rectangle({str(self.__width)}, {str(self.__height)})"
-        return rect
+        r = "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+        return r
