@@ -1,98 +1,147 @@
-# 7-base_geometry.txt
-
-=======================
+=============================
 How to Use 7-base_geometry.py
-=======================
+=============================
 
-This module defines a class ``BaseGeometry``.
+This modules defines a base geometry class BaseGeometry.
 
 Instantiation
 =============
-``BaseGeometry`` can be instantiated with no arguments.
+
+``BaseGeometry`` includes no attributes, and accordingly is initialized 
+with no arguments.
 
 ::
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> BaseGeometry = BaseGeometry()
-    >>> print(type(BaseGeometry))
+    >>> base_geo = BaseGeometry()
+    >>> type(base_geo)
     <class '7-base_geometry.BaseGeometry'>
 
 ::
-    >>> print(BaseGeometry) # doctest: +ELLIPSIS
+
+    >>> print(base_geo) # doctest: +ELLIPSIS
     <7-base_geometry.BaseGeometry object at ...>
+
+In fact, any arguments supplied to an instantiation of ``BaseGeometry`` results
+in a TypeError.
 
 ::
 
-    >>> BaseGeometry = BaseGeometry(None)
+    >>> base_geo = BaseGeometry(None)
     Traceback (most recent call last):
-    TypeError: 'BaseGeometry' object is not callable
+    TypeError: object() takes no parameters
 
 Methods
 =======
 
-``BaseGeometry`` features two methods - ``area(self)`` and
-``integer_validator(self, name, value)``. ``area(...)`` is not yet implemented.
+``BaseGeometry`` features two methods - ``area(self)`` and 
+``integer_validator(self, name, value)``. ``area(...)`` is not yet
+implemented.
 
 ::
 
-    >>> print(BaseGeometry.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
-    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
-
-``area(...)`` method can be instantiated with no arguments.
+    >>> base_geo = BaseGeometry()
+    >>> print(base_geo.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry 
+     object at...>>
 
 ::
 
-    >>> BaseGeometry.area()
+    >>> base_geo.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
 
+The second method, ``integer_validator(...)``, validates the integer value
+of a paramter. The first parameter, ``name``, is the name of the argument to
+check. The second argument, ``value``, is the argument to check.
 
 ::
 
-    >>> BaseGeometry.integer_validator()
+    >>> print(base_geo.integer_validator) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    <bound method BaseGeometry.integer_validator of <7-base_geometry.BaseGeometry 
+    object at...>>
+
+If ``value`` is a valid integer, the function does nothing.
+
+::
+
+
+   >>> base_geo.integer_validator("valid number", 1)
+
+But, if ``value`` is not an integer, a ``TypeError`` is raised.
+
+::
+
+    >>> base_geo.integer_validator("invalid number", "number")
     Traceback (most recent call last):
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-Argument age must always be a string and value must always be an integer.
+    TypeError: invalid number must be an integer
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", 0)
+    >>> base_geo.integer_validator("another invalid", True)
     Traceback (most recent call last):
-    ValueError: age must be greater than 0
+    TypeError: another invalid must be an integer
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", -1)
+    >>> base_geo.integer_validator("invalid tuple", (1,))
     Traceback (most recent call last):
-    ValueError: age must be greater than 0
+    TypeError: invalid tuple must be an integer
 
 ::
 
-    >>> BaseGeometry.integer_validator(age, 5)
+    >>> base_geo.integer_validator("and another", [3])
     Traceback (most recent call last):
-    NameError: name 'age' is not defined
+    TypeError: and another must be an integer
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", 1.5)
+    >>> base_geo.integer_validator("more invalid testing", {3, 4})
     Traceback (most recent call last):
-    TypeError: age must be an integer
+    TypeError: more invalid testing must be an integer
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", "abc")
+    >>> base_geo.integer_validator("absolutely every possible invalid", None)
     Traceback (most recent call last):
-    TypeError: age must be an integer
+    TypeError: absolutely every possible invalid must be an integer
+
+And if ``value`` is an integer, but less than or equal to zero, a ValueError
+is raised.
 
 ::
 
-    >>> BaseGeometry.integer_validator({"a": 1}, (1, 2))
+    >>> base_geo.integer_validator("invalid int", -1)
+    Traceback (most recent call last):
+    ValueError: invalid int must be greater than 0
+
+::
+
+    >>> base_geo.integer_validator("invalid int", 0)
+    Traceback (most recent call last):
+    ValueError: invalid int must be greater than 0
+
+Both ``name`` and ``value`` must be provided. Otherwise, a TypeError is raised.
+
+::
+
+    >>> base_geo.integer_validator() # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 
+    'name' and 'value'
+
+::
+
+    >>> base_geo.integer_validator(None) # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 
+    'value'
+
+The method assumes the paramter ``name`` will be a string, but ``name`` of any
+type will be printed.
+
+::
+
+    >>> base_geo.integer_validator({"a": 1}, (1, 2))
     Traceback (most recent call last):
     TypeError: {'a': 1} must be an integer
-
-::
-
-    >>> BaseGeometry.integer_validator(None) # doctest: +NORMALIZE_WHITESPACE
-    Traceback (most recent call last):
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
