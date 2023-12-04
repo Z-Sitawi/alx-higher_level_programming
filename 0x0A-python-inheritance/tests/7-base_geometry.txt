@@ -25,7 +25,7 @@ Instantiation
 
     >>> BaseGeometry = BaseGeometry(None)
     Traceback (most recent call last):
-    TypeError: object() takes no parameters
+    TypeError: BaseGeometry() takes no arguments
 
 Methods
 =======
@@ -35,8 +35,8 @@ Methods
 
 ::
 
-    >>> bg = BaseGeometry()
-    >>> print(bg.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    >>> BaseGeometry = BaseGeometry()
+    >>> print(BaseGeometry.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
     <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
 
 ``area(...)`` method can be instantiated with no arguments.
