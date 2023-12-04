@@ -28,7 +28,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
-        if width <= 0:
+        if width <= 0 or type(width) != int:
             Rectangle.integer_validator(self, "width", width)
 
         if height <= 0 or type(height) != int:
