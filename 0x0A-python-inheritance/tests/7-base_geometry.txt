@@ -17,6 +17,10 @@ Instantiation
     >>> print(type(BaseGeometry))
     <class '7-base_geometry.BaseGeometry'>
 
+::
+    >>> print(BaseGeometry) # doctest: +ELLIPSIS
+    <7-base_geometry.BaseGeometry object at ...>
+
 ``area`` method can be instantiated with no arguments.
 
 ::
