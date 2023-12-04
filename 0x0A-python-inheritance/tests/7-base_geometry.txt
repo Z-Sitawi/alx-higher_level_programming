@@ -33,6 +33,12 @@ Methods
 ``BaseGeometry`` features two methods - ``area(self)`` and
 ``integer_validator(self, name, value)``. ``area(...)`` is not yet implemented.
 
+::
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
+
 ``area(...)`` method can be instantiated with no arguments.
 
 ::
