@@ -12,27 +12,27 @@ Instantiation
 
 ::
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> BaseGeometry = BaseGeometry()
-    >>> print(type(BaseGeometry))
+    >>> base_geo = __import__('7-base_geometry').BaseGeometry
+    >>> base_geo = BaseGeometry()
+    >>> print(type(base_geo))
     <class '7-base_geometry.BaseGeometry'>
 
 ::
-    >>> print(BaseGeometry) # doctest: +ELLIPSIS
+    >>> print(base_geo) # doctest: +ELLIPSIS
     <7-base_geometry.BaseGeometry object at ...>
 
 ``area`` method can be instantiated with no arguments.
 
 ::
 
-    >>> BaseGeometry.area()
+    >>> base_geo.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
 
 
 ::
 
-    >>> BaseGeometry.integer_validator()
+    >>> base_geo.integer_validator()
     Traceback (most recent call last):
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
@@ -40,30 +40,30 @@ Argument age must always be a string and value must always be an integer.
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", 0)
+    >>> base_geo.integer_validator("age", 0)
     Traceback (most recent call last):
     ValueError: age must be greater than 0
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", -1)
+    >>> base_geo.integer_validator("age", -1)
     Traceback (most recent call last):
     ValueError: age must be greater than 0
 
 ::
 
-    >>> BaseGeometry.integer_validator(age, 5)
+    >>> base_geo.integer_validator(age, 5)
     Traceback (most recent call last):
     NameError: name 'age' is not defined
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", 1.5)
+    >>> base_geo.integer_validator("age", 1.5)
     Traceback (most recent call last):
     TypeError: age must be an integer
 
 ::
 
-    >>> BaseGeometry.integer_validator("age", "abc")
+    >>> base_geo.integer_validator("age", "abc")
     Traceback (most recent call last):
     TypeError: age must be an integer
