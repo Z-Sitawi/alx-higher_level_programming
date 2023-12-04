@@ -130,14 +130,14 @@ Note that lists of strings are sorted lexographically.
 ::
 
     >>> my_list.print_sorted()
-    ['Betty', 'Brennan', 'Alx', 'Poppy', 'School']
+    ['Alx', 'Betty', 'Brennan', 'Poppy', 'School']
 
 Another friendly reminder that the original list is unaltered :)
 
 ::
 
     >>> print(my_list)
-    ['Brennan', 'Poppy', 'School', 'Alx', 'Betty']
+    ['Alx', 'Betty', 'Brennan', 'Poppy', 'School']
 
 Nothing to sort with empty lists.
 
