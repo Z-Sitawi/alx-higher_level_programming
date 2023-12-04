@@ -1,3 +1,5 @@
+# 1-my_list.txt
+
 =======================
 How to Use 1-my_list.py
 =======================
@@ -35,6 +37,15 @@ Or a single argument, which must be an iterable object.
     >>> my_list = MyList(None)
     Traceback (most recent call last):
     TypeError: 'NoneType' object is not iterable
+
+
+A ``TypeError`` will be raised for any more than one instantiation arguments.
+
+::
+
+    >>> my_list = MyList([1, 2], [3, 4])
+    Traceback (most recent call last):
+    TypeError: list() takes at most 1 argument (2 given)
 
 Usage
 =====
@@ -122,22 +133,22 @@ Note that lists of strings are sorted lexographically.
     >>> my_list.append("Brennan")
     >>> my_list.append("Poppy")
     >>> my_list.append("School")
-    >>> my_list.append("Alx")
+    >>> my_list.append("Holberton")
     >>> my_list.append("Betty")
     >>> print(my_list)
-    ['Alx', 'Betty', 'Brennan', 'Poppy', 'School']
+    ['Brennan', 'Poppy', 'School', 'Holberton', 'Betty']
 
 ::
 
     >>> my_list.print_sorted()
-    ['Alx', 'Betty', 'Brennan', 'Poppy', 'School']
+    ['Betty', 'Brennan', 'Holberton', 'Poppy', 'School']
 
 Another friendly reminder that the original list is unaltered :)
 
 ::
 
     >>> print(my_list)
-    ['Alx', 'Betty', 'Brennan', 'Poppy', 'School']
+    ['Brennan', 'Poppy', 'School', 'Holberton', 'Betty']
 
 Nothing to sort with empty lists.
 
@@ -146,3 +157,13 @@ Nothing to sort with empty lists.
     >>> my_list = MyList()
     >>> my_list.print_sorted()
     []
+
+If ``print_sorted(...)`` is called on a list of different types, a TypeError
+will be raised.
+
+::
+
+    >>> my_list = MyList([1, "Betty", "Holberton", 5])
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: str() < int()
