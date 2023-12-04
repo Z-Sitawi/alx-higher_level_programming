@@ -125,7 +125,7 @@ Note that lists of strings are sorted lexographically.
     >>> my_list.append("Alx")
     >>> my_list.append("Betty")
     >>> print(my_list)
-    ['Brennan', 'Poppy', 'School', 'Alx', 'Betty']
+    ['Alx', 'Betty', 'Brennan', 'Poppy', 'School']
 
 ::
 
