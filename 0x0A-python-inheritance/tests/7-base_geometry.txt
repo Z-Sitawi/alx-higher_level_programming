@@ -35,11 +35,6 @@ Methods
 
 ::
 
-    >>> BaseGeometry = BaseGeometry()
-    TypeError: 'BaseGeometry' object is not callable
-
-::
-
     >>> print(BaseGeometry.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
     <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
 
