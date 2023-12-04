@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Defines an object available attribute lookup function."""
+
+
 def lookup(obj):
     """
     :param obj: An object.
