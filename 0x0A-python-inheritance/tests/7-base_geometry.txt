@@ -21,7 +21,19 @@ Instantiation
     >>> print(BaseGeometry) # doctest: +ELLIPSIS
     <7-base_geometry.BaseGeometry object at ...>
 
-``area`` method can be instantiated with no arguments.
+::
+
+    >>> BaseGeometry = BaseGeometry(None)
+    Traceback (most recent call last):
+    TypeError: object() takes no parameters
+
+Methods
+=======
+
+``BaseGeometry`` features two methods - ``area(self)`` and
+``integer_validator(self, name, value)``. ``area(...)`` is not yet implemented.
+
+``area(...)`` method can be instantiated with no arguments.
 
 ::
 
