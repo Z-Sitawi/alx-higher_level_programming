@@ -1,0 +1,65 @@
+# 7-base_geometry.txt
+
+=======================
+How to Use 7-base_geometry.py
+=======================
+
+This module defines a class ``BaseGeometry``.
+
+Instantiation
+=============
+``BaseGeometry`` can be instantiated with no arguments.
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> BaseGeometry = BaseGeometry()
+    >>> print(type(BaseGeometry))
+    <class '7-base_geometry.BaseGeometry'>
+
+``area`` method can be instantiated with no arguments.
+
+::
+
+    >>> BaseGeometry.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+
+::
+
+    >>> BaseGeometry.integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Argument age must always be a string and value must always be an integer.
+
+::
+
+    >>> BaseGeometry.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+::
+
+    >>> BaseGeometry.integer_validator("age", -1)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+::
+
+    >>> BaseGeometry.integer_validator(age, 5)
+    Traceback (most recent call last):
+    NameError: name 'age' is not defined
+
+::
+
+    >>> BaseGeometry.integer_validator("age", 1.5)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+::
+
+    >>> BaseGeometry.integer_validator("age", "abc")
+    Traceback (most recent call last):
+    TypeError: age must be an integer
