@@ -14,10 +14,9 @@ class BaseGeometry:
         :param name: we assume it is always a string.
         :param value: the value to validate.
 
-        :return: if value is not an integer: raise a TypeError exception,
-                    with the message <name> must be an integer
-                 if value is less or equal to 0: raise a ValueError exception
-                    with the message <name> must be greater than 0
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is <= 0.
         """
         if type(value) != int:
             raise TypeError("{:s} must be an integer".format(name))
