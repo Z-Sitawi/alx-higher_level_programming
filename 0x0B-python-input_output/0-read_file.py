@@ -9,6 +9,6 @@ def read_file(filename=""):
     :param filename: the name if the text file to read from
     :return: Nothing
     """
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(filename, encoding="utf-8") as file:
         read = file.read()
-        print(read)
+        print(read, end="")
