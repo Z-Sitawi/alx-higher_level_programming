@@ -24,7 +24,7 @@ def append_after(filename="", search_string="", new_string=""):
             else:
                 mylist.append(line)
                 line = ""
-        mylist.append(line)
+            mylist.append(line)
         for x in mylist:
             if search_string in x:
                 new_lines += x + "\n" + new_string + "\n"
