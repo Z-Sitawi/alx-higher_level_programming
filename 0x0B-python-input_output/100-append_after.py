@@ -12,17 +12,13 @@ def append_after(filename="", search_string="", new_string=""):
     :param new_string: (str) string to insert
     :return: nothing
     """
-    with open(filename, "r+", encoding="utf-8") as file:
-        lines = file.readlines()
-        new_lines = []
+    new_lines = ""
+    with open(filename, encoding="utf-8") as file:
 
-        for line in lines:
-            new_lines.append(line)
+        for line in file:
+            new_lines += line
             if search_string in line:
-                new_lines.append(new_string + "\n")
+                new_lines += new_string
 
-        # Go back to the beginning of the file before writing
-        file.seek(0)
-        file.writelines(new_lines)
-        # Remove any remaining content from the old file, if necessary
-        file.truncate()
+    with open(filename, encoding="utf-8") as file:
+        file.write(new_lines)
