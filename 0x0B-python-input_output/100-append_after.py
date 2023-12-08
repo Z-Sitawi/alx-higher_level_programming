@@ -20,5 +20,5 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 new_lines += new_string
 
-    with open(filename, encoding="utf-8") as file:
+    with open(filename, "w", encoding="utf-8") as file:
         file.write(new_lines)
