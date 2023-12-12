@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Defines a class named Rectangle """
-Base = __import__("base").Base
-
+from models.base import Base
 
 class Rectangle(Base):
     """ Represent a Rectangle """
