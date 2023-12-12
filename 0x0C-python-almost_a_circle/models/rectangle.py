@@ -77,7 +77,7 @@ class Rectangle(Base):
 
     def area(self):
         """
-        calculates the area value of the Rectangle instance.
+        Calculates the area value of the Rectangle instance.
 
         :return: the area value of the Rectangle instance.
         """
