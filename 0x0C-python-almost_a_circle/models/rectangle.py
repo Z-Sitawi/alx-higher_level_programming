@@ -2,15 +2,24 @@
 """ Defines a class named Rectangle """
 from models.base import Base
 
+
 class Rectangle(Base):
     """ Represent a Rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initiates a Rectangle """
-        super().__init__(id)
+        """
+            Initializes a Rectangle
+        parameters:
+            :param width (int): The width of the new Rectangle.
+            :param height (int): The height of the new Rectangle.
+            :param x (int): The x coordinate of the new Rectangle.
+            :param y (int): The y coordinate of the new Rectangle.
+            :param id (int): The identity of the new Rectangle.
+        """
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
