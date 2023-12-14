@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Defines a class named Rectangle """
-from models.base import Base
+from modles.base import Base
 
 
 class Rectangle(Base):
@@ -82,3 +82,10 @@ class Rectangle(Base):
         :return: the area value of the Rectangle instance.
         """
         return self.width * self.height
+
+    def display(self):
+        if not (self.width <= 0) or not (self.height <= 0):
+            for y in range(self.height):
+                for x in range(self.width):
+                    print("#", end="")
+                print("")
