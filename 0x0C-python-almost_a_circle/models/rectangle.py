@@ -88,7 +88,10 @@ class Rectangle(Base):
                     prints in stdout
         the Rectangle instance with the character #
         """
-        if not (self.width <= 0) or not (self.height <= 0):
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+        if not (self.width < 0) or not (self.height < 0):
             if not (self.x < 0) or not (self.y < 0):
                 for y in range(self.y):
                     print("")
