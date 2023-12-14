@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Defines a class named Rectangle """
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -111,20 +111,7 @@ class Rectangle(Base):
         :param args: N number of arguments
         :param kwargs: N number of key/value arguments
         """
-
-        if args is None:
-            for k in kwargs.keys():
-                if k == "id":
-                    self.id = kwargs[k]
-                elif k == "x":
-                    self.x = kwargs[k]
-                elif k == "y":
-                    self.y = kwargs[k]
-                elif k == "width":
-                    self.width = kwargs[k]
-                elif k == "height":
-                    self.height = kwargs[k]
-        else:
+        if args:
             if len(args) == 1:
                 self.id = args[0]
             elif len(args) == 2:
@@ -145,3 +132,15 @@ class Rectangle(Base):
                 self.height = args[2]
                 self.x = args[3]
                 self.y = args[4]
+        else:
+            for k in kwargs.keys():
+                if k == "id":
+                    self.id = kwargs[k]
+                elif k == "x":
+                    self.x = kwargs[k]
+                elif k == "y":
+                    self.y = kwargs[k]
+                elif k == "width":
+                    self.width = kwargs[k]
+                elif k == "height":
+                    self.height = kwargs[k]
