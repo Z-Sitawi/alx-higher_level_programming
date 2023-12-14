@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Defines a class named Rectangle """
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -106,3 +106,30 @@ class Rectangle(Base):
         """
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
                 f" - {self.width}/{self.height}")
+
+    def update(self, *args):
+        """
+        Assigns an argument to each attribute
+        :param args: N number of arguments
+        """
+        if len(args) > 0:
+            if len(args) == 1:
+                self.id = args[0]
+            elif len(args) == 2:
+                self.id = args[0]
+                self.width = args[1]
+            elif len(args) == 3:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+            elif len(args) == 4:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+            elif len(args) == 5:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
