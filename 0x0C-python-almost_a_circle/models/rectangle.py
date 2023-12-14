@@ -89,8 +89,12 @@ class Rectangle(Base):
         the Rectangle instance with the character #
         """
         if not (self.width <= 0) or not (self.height <= 0):
-            for y in range(self.height):
-                for x in range(self.width):
+            for y in range(self.y):
+                print("")
+            for x in range(self.x):
+                print("", end="")
+            for h in range(self.height):
+                for w in range(self.width):
                     print("#", end="")
                 print("")
 
