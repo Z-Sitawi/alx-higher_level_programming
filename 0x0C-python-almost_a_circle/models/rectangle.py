@@ -93,3 +93,11 @@ class Rectangle(Base):
                 for x in range(self.width):
                     print("#", end="")
                 print("")
+
+    def __str__(self):
+        """
+
+        :return: [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+                f" - {self.width}/{self.height}")
