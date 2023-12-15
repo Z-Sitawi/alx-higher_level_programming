@@ -144,3 +144,14 @@ class Rectangle(Base):
                     self.width = kwargs[k]
                 elif k == "height":
                     self.height = kwargs[k]
+
+    def to_dictionary(self):
+        """
+
+        :return: the dictionary representation of a Rectangle
+        """
+        class_dict = self.__dict__.copy()
+        pre = "_Rectangle__"
+        # Remove any private attributes (those starting with '_')
+        class_dict = {key.removeprefix(pre): value for key, value in class_dict.items()}
+        return class_dict
