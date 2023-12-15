@@ -2,6 +2,7 @@
 """ Defines a class which will be the “base” of
     all the other classes in this project
 """
+import json
 
 
 class Base:
@@ -15,3 +16,13 @@ class Base:
         else:
             Base.__nb_objects = Base.__nb_objects + 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+
+        :param list_dictionaries: is a list of dictionaries
+        :return: the string: "[]" If list_dictionaries is None or empty,
+        Otherwise, return the JSON string representation of list_dictionaries
+        """
+        return json.dumps(list_dictionaries)
