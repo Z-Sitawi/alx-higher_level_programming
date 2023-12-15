@@ -25,7 +25,7 @@ class Base:
         :return: the string: "[]" If list_dictionaries is None or empty,
         Otherwise, return the JSON string representation of list_dictionaries
         """
-        if list_dictionaries is None:
-            return []
+        if list_dictionaries is None or list_dictionaries == []:
+            return json.dumps([])
         else:
             return json.dumps(list_dictionaries)
