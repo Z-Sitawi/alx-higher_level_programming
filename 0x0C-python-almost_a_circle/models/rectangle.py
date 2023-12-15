@@ -150,8 +150,10 @@ class Rectangle(Base):
 
         :return: the dictionary representation of a Rectangle
         """
-        class_dict = self.__dict__.copy()
-        pre = "_Rectangle__"
-        # Remove any private attributes (those starting with '_')
-        class_dict = {key.removeprefix(pre): value for key, value in class_dict.items()}
-        return class_dict
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
