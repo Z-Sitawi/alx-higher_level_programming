@@ -29,7 +29,7 @@ A single argument
 
 two arguments
 ::
-    >>> print(add_integer(2, 12)
+    >>> print(add_integer(2, 12))
     14
     >>> print(add_integer(2.5, -14))
     -12
