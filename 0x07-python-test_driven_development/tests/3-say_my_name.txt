@@ -17,7 +17,7 @@ A single argument
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("zak")
-    My name is zak
+    My name is zak 
 
 Tow arguments
 ::
