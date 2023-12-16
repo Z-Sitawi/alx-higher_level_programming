@@ -29,7 +29,7 @@ A single argument
 
 two arguments
 ::
-    >>> print(add_integer(2, 12)
+    >>> print(add_integer(2, 12))
     14
     >>> print(add_integer(2.5, -14))
     -12
@@ -57,3 +57,4 @@ One of the arguments is not int or float
     >>> print(add_integer(5, "s"))
     Traceback (most recent call last):
     TypeError: b must be an integer
+
