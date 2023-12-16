@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+""" Defines a function that adds 2 integers """
+
+
 def add_integer(a, b=98):
-    """ adds 2 integers """
+    """
+
+    :param a: firs integer
+    :param b: second integer
+    :return: a + b
+    """
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
     elif not isinstance(b, int) and not isinstance(b, float):
