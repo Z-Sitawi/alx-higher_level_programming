@@ -19,4 +19,4 @@ def text_indentation(text):
         else:
             modified_text += char
 
-    print(modified_text.replace("\n\n ", "\n\n"))
+    print(modified_text.replace("\n\n ", "\n\n"), end="")
