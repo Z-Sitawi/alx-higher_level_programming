@@ -30,7 +30,8 @@ def list_states(username, password, database):
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: ./0-select_states.py <mysql username> <mysql password> <database name>")
+        print("Usage: ./0-select_states.py <mysql username> <mysql password> 
+                <database name>")
         sys.exit(1)
 
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
