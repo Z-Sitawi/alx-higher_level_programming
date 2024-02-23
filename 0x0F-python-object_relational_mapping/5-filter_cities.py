@@ -13,10 +13,10 @@ if __name__ == "__main__":
     sql_query = ("SELECT DISTINCT cities.name "
                  "FROM cities "
                  "INNER JOIN states ON cities.state_id = states.id "
-                 "WHERE states.name = %s")
+                 "WHERE states.name = %s "
+                 "ORDER BY cities.id ASC")
     c.execute(sql_query, (sys.argv[4],))
     cities = c.fetchall()
-    cities = [list(city) for city in cities]
     for city in cities[: len(cities) - 1]:
         print(city[0], end=", ")
     print(cities[-1][0])
