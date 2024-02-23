@@ -21,4 +21,4 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
     def __str__(self):
-        return f"{State.id}: {State.name}"
+        return f"{self.id}: {self.name}"
