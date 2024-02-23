@@ -10,7 +10,9 @@ import MySQLdb
 if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
-    c.execute("SELECT DISTINCT cities.name FROM cities "
-              "INNER JOIN states ON cities.state_id = states.id "
-              "WHERE BINARY states.name = '{}'", sys.argv[4].capitalize())
+    sql_query = ("SELECT DISTINCT cities.name "
+                 "FROM cities "
+                 "INNER JOIN states ON cities.state_id = states.id "
+                 "WHERE states.name = %s")
+    c.execute(sql_query, (sys.argv[4],))
     [print(city) for city in c.fetchall()]
