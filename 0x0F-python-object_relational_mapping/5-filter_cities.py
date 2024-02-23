@@ -12,5 +12,5 @@ if __name__ == "__main__":
     c = db.cursor()
     c.execute("SELECT DISTINCT cities.name FROM cities "
               "INNER JOIN states ON cities.state_id = states.id "
-              "WHERE states.name = 'Texas'")
+              "WHERE states.name = %s", sys.argv[4])
     [print(city) for city in c.fetchall()]
