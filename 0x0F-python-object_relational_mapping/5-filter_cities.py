@@ -15,7 +15,8 @@ if __name__ == "__main__":
                  "INNER JOIN states ON cities.state_id = states.id "
                  "WHERE states.name = %s")
     c.execute(sql_query, (sys.argv[4],))
-    for city in range(len(c.fetchall())):
-        if city != len(c.fetchall()):
-            print(c.fetchall()[0]+", ", end="")
-        print(c.fetchall()[0], end="")
+    cities = c.fetchall()
+    cities = [list(city) for city in cities]
+    for city in cities[: len(cities) - 1]:
+        print(city, end=", ")
+    print(cities[-1])
