@@ -4,7 +4,8 @@ This script is safe from MySQL injections:
 Displays all values in the states table of hbtn_0e_0_usa
 where name matches the 4th argument.
 Usage: ./0-select_states.py
-<mysql username> <mysql password> <database name> <state name searched>
+Usage: ./program.py <mysql username> <mysql password> <database name>
+<state name searched>
 """
 import sys
 import MySQLdb
