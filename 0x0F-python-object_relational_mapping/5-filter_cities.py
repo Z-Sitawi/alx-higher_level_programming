@@ -18,5 +18,5 @@ if __name__ == "__main__":
     cities = c.fetchall()
     cities = [list(city) for city in cities]
     for city in cities[: len(cities) - 1]:
-        print(city[1], end=", ")
-    print(cities[-1][1])
+        print(city[0], end=", ")
+    print(cities[-1][0])
