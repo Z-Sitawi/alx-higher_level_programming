@@ -10,14 +10,8 @@ import MySQLdb
 if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
-    sql_query = ("SELECT DISTINCT city_name "
-                 "FROM (SELECT cities.name AS city_name "
-                 "FROM cities "
-                 "INNER JOIN states ON cities.state_id = states.id "
-                 "WHERE states.name = %s) AS subquery "
-                 "ORDER BY city_name ASC")
-    c.execute(sql_query, (sys.argv[4],))
-    cities = c.fetchall()
-    for city in cities[: len(cities) - 1]:
-        print(city[0], end=", ")
-    print(cities[-1][0])
+    c.execute("SELECT * FROM `cities` as `c` \
+                   INNER JOIN `states` as `s` \
+                      ON `c`.`state_id` = `s`.`id` \
+                   ORDER BY `c`.`id`")
+    print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
