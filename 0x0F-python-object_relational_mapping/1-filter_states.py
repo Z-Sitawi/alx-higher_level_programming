@@ -22,8 +22,14 @@ def list_states(username, password, database):
     try:
         db = MySQLdb.connect(user=username, passwd=password, db=database)
         c = db.cursor()
-        c.execute("SELECT * FROM `states` WHERE name LIKE 'N%'")
-        [print(state) for state in c.fetchall()]
+        c.execute("SELECT * FROM `states` WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Fetch all rows
+        states = c.fetchall()
+        # Display results
+        for state in states:
+            print(state)
+        c.close()
+        db.close()
     except MySQLdb.Error as e:
         print("MySQL Error:", e)
 
