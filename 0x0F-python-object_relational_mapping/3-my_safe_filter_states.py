@@ -1,4 +1,4 @@
-#!/usr/bin/#!/usr/bin/python3
+#!/usr/bin/python3
 """
 This script is safe from MySQL injections:
 Displays all values in the states table of hbtn_0e_0_usa
