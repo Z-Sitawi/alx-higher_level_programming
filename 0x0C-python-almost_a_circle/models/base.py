@@ -2,7 +2,7 @@
 """ Defines a class which will be the “base” of
     all the other classes in this project
 """
-import json
+import ex
 
 
 class Base:
