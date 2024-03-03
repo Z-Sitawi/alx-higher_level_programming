@@ -23,7 +23,7 @@ def list_commits(limit):
             name = commit.get("commit").get("author").get("name")
             print(f'{commit.get("sha")}: {name}')
     elif response.status_code == 404:
-        print("Commit not found.")
+        print("Repo/commits not found.")
     else:
         print(f"Failed to retrieve commits. Status code: {response.status_code}")
 
