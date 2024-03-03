@@ -19,9 +19,9 @@ if __name__ == "__main__":
     response = requests.get(url, data=param)
     try:
         json_resp = response.json()
-        if json_resp is None:
-            print('No result')
-        else:
+        if json_resp:
             print(f"[{json_resp['id']}] {json_resp['name']}")
+        else:
+            print('No result')
     except Exception:
         print("Not a valid JSON")
