@@ -6,9 +6,10 @@ found in the header of the response.
 Usage: ./1-hbtn_header.py <URL>
 """
 import urllib.request
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
-    with urllib.request.urlopen(argv[1]) as rsp:
+    url = sys.argv[1]
+    with urllib.request.urlopen(url) as rsp:
         print(dict(rsp.headers)['X-Request-Id'])
