@@ -9,5 +9,4 @@ from sys import argv
 
 if __name__ == '__main__':
     with urllib.request.urlopen(argv[1]) as rsp:
-        bodyResponse = rsp.__dict__['headers'].__dict__['_headers'][-3][1]
-        print(bodyResponse)
+        print(dict(rsp.headers)['X-Request-Id'])
