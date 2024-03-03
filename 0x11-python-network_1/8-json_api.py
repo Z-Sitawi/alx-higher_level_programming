@@ -10,11 +10,12 @@ import requests
 
 
 if __name__ == "__main__":
-    letter = sys.argv[1]
-    url = 'http://0.0.0.0:5000/search_user'
-    if letter is None:
+    if len(sys.argv) > 1:
+        letter = sys.argv[1]
+    else:
         letter = ""
     param = {'q': letter}
+    url = 'http://0.0.0.0:5000/search_user'
     response = requests.get(url, data=param)
     try:
         json_resp = response.json()
