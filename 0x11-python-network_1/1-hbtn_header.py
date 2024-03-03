@@ -5,11 +5,13 @@ found in the header of the response.
 
 Usage: ./1-hbtn_header.py <URL>
 """
-import urllib.request
 import sys
+import urllib.request
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     url = sys.argv[1]
-    with urllib.request.urlopen(url) as rsp:
-        print(dict(rsp.headers)['X-Request-Id'])
+
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as response:
+        print(dict(response.headers).get("X-Request-Id"))
