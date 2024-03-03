@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 """ Takes in a URL, sends a request to the URL
 and displays the body of the response (decoded in utf-8).
-Usage: ./3-error_code.pu <url>
+
+Usage: ./3-error_code.py <URL>
+  - Handles HTTP errors.
 """
 import sys
-import urllib.request
 import urllib.error
+import urllib.request
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     url = sys.argv[1]
-    request = urllib.request.Request(url)
 
+    request = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(url) as response:
-            body = response.read().decode('utf-8')
-            print(body)
+        with urllib.request.urlopen(request) as response:
+            print(response.read().decode("ascii"))
     except urllib.error.HTTPError as e:
-        print(e.code)
+        print("Error code: {}".format(e.code))
