@@ -12,8 +12,8 @@ def list_commits(limit):
         Lists commits on a given GitHub repository
     :param limit: number of commits to list
     """
-    owner = sys.argv[1]
-    repo_name = sys.argv[2]
+    repo_name = sys.argv[1]
+    owner = sys.argv[2]
     url = f'https://api.github.com/repos/{owner}/{repo_name}/commits?per_page={limit}'
     response = requests.get(url)
 
