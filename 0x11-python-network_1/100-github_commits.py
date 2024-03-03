@@ -14,7 +14,8 @@ def list_commits(limit):
     """
     repo_name = sys.argv[1]
     owner = sys.argv[2]
-    url = f'https://api.github.com/repos/{owner}/{repo_name}/commits?per_page={limit}'
+    url = (f'https://api.github.com/repos/{owner}/{repo_name}/'
+           f'commits?per_page={limit}')
     response = requests.get(url)
 
     if response.status_code == 200:
@@ -25,7 +26,8 @@ def list_commits(limit):
     elif response.status_code == 404:
         print("Repo/commits not found.")
     else:
-        print(f"Failed to retrieve commits. Status code: {response.status_code}")
+        print(f"Failed to retrieve commits. "
+              f"Status code: {response.status_code}")
 
 
 if __name__ == "__main__":
