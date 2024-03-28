@@ -6,13 +6,17 @@ if (process.argv.length > 2) {
   let count = 0;
   const wedge = 'https://swapi-api.alx-tools.com/api/people/18/';
   const request = require('request');
-  request(url, function (error = null, response) {
-    const films = JSON.parse(response.body).results;
-    for (const film of films) {
-      for (const character of film.characters) {
-        if (character === wedge) { count++; }
+  request(url, function (error, response) {
+    if (error) {
+      console.log(error);
+    } else {
+      const films = JSON.parse(response.body).results;
+      for (const film of films) {
+        for (const character of film.characters) {
+          if (character === wedge) { count++; }
+        }
       }
+      console.log(count);
     }
-    console.log(count);
   });
 }
