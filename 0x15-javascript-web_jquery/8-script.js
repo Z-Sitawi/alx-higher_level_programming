@@ -9,9 +9,9 @@ fetch(url)
     return response.json();
   })
   .then(data => {
-    const allFilms = data.results
+    const allFilms = data.results;
     allFilms.forEach(film => {
-        $('#list_movies').append("<li>"+film.title+"</li>")
+      $('#list_movies').append('<li>' + film.title + '</li>');
     });
   })
   .catch(error => {
